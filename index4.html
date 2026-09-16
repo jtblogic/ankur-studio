@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="gu" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>અંકુર સ્ટુડિયો | પ્રીમિયમ વેડિંગ અને સિનેમેટિક ફોટોગ્રાફી</title>
+  
+  <!-- Meta SEO -->
+  <meta name="description" content="અંકુર સ્ટુડિયો - યાદગાર ક્ષણો, ભારતીય લગ્ન પ્રસંગો, મહેંદી, દુલ્હન પોટ્રેટ અને સિનેમેટિક વિડીયોગ્રાફી." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Noto Sans Gujarati & Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Noto+Sans+Gujarati:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            gujarati: ['"Noto Sans Gujarati"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              goldLight: '#E6CA65',
+              dark: '#0B0C10',
+              card: '#14161D',
+              surface: '#1E222D',
+              muted: '#8E95A5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0C10;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232733;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+
+    /* WhatsApp Floating Button */
+    @keyframes wa-pulse-ring {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    #whatsapp-float .wa-ring {
+      animation: wa-pulse-ring 2s ease-out infinite;
+    }
+    #whatsapp-float:hover .wa-tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+      pointer-events: auto;
+    }
+    /* JTB Logic - Eye-Catchy Credit */
+    .jtb-eye {
+      position: relative;
+      font-weight: 700;
+      background: linear-gradient(90deg, #D4AF37, #FFF3B0, #D4AF37);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      animation: jtb-shine 3s linear infinite;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .jtb-eye:hover {
+      filter: drop-shadow(0 0 8px rgba(212,175,55,0.8));
+    }
+    .jtb-eye::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    }
+    @keyframes jtb-shine {
+      to { background-position: 200% center; }
+    }
+    .jtb-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(212,175,55,0.45);
+      background: rgba(212,175,55,0.08);
+      box-shadow: 0 0 14px rgba(212,175,55,0.18);
+      transition: all 0.3s ease;
+    }
+    .jtb-badge:hover {
+      background: rgba(212,175,55,0.16);
+      box-shadow: 0 0 22px rgba(212,175,55,0.4);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-dark text-slate-100 font-gujarati antialiased selection:bg-brand-gold selection:text-black">
+
+  <!-- ================= NAVBAR ================= -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brand-dark/80 backdrop-blur-md border-b border-white/5">
+    <!-- Top Credit Strip -->
+    <div class="bg-black/40 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 h-9 flex items-center justify-center md:justify-end gap-2 text-[11px] tracking-wide text-brand-muted">
+        <span class="hidden sm:inline">Developed &amp; Designed by</span>
+        <span class="sm:hidden">By</span>
+        <a href="" target="_blank" rel="noopener" class="jtb-badge" title="Designed & Developed by JTB Logic - jtblogic.in">
+          <i data-lucide="sparkles" class="w-3 h-3 text-brand-gold"></i>
+          <span class="jtb-eye">JTB Logic</span>
+        </a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="group flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-brand-gold/60 flex items-center justify-center group-hover:border-brand-gold transition">
+          <i data-lucide="aperture" class="w-5 h-5 text-brand-gold transition-transform duration-500 group-hover:rotate-90"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl font-bold tracking-wider text-white group-hover:text-brand-gold transition">અંકુર સ્ટુડિયો</span>
+          <span class="text-[10px] tracking-widest uppercase text-brand-muted">સિનેમેટિક ફોટોગ્રાફી</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center space-x-10 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-brand-gold transition">અમારા વિશે</a>
+        <a href="#portfolio" class="hover:text-brand-gold transition">પોર્ટફોલિયો</a>
+        <a href="#services" class="hover:text-brand-gold transition">સેવાઓ</a>
+        <a href="#testimonials" class="hover:text-brand-gold transition">અભિપ્રાય</a>
+        <a href="#contact" class="hover:text-brand-gold transition">સંપર્ક</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-toggle" aria-label="મેનુ ખોલો" class="md:hidden p-2 text-slate-300 hover:text-white">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-card/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 space-y-4">
+      <a href="#about" class="block text-sm hover:text-brand-gold py-1">અમારા વિશે</a>
+      <a href="#portfolio" class="block text-sm hover:text-brand-gold py-1">પોર્ટફોલિયો</a>
+      <a href="#services" class="block text-sm hover:text-brand-gold py-1">સેવાઓ</a>
+      <a href="#testimonials" class="block text-sm hover:text-brand-gold py-1">અભિપ્રાય</a>
+      <a href="#contact" class="block text-sm hover:text-brand-gold py-1">સંપર્ક</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-28 md:pt-32 overflow-hidden">
+    <!-- Atmospheric Background Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=2070&auto=format&fit=crop" 
+           alt="ભારતીય લગ્ન ફોટોગ્રાફી" 
+           class="w-full h-full object-cover object-center opacity-30 filter scale-105" />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/5 mb-8 backdrop-blur-sm">
+        <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+        <span class="text-xs uppercase tracking-wider text-brand-gold">૨૦૦૪ થી અવિરત કલાત્મક સફર</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+        અમે માત્ર ફોટો નથી લેતા, <br/>
+        <span class="text-brand-gold font-serif italic">તમારી લાગણીઓને અમર બનાવીએ છીએ.</span>
+      </h1>
+
+      <p class="text-brand-muted max-w-2xl mx-auto text-base sm:text-lg font-normal leading-relaxed mb-10">
+        અંકુર સ્ટુડિયો ડેસ્ટિનેશન વેડિંગ, પરંપરાગત રીત-રિવાજો, મહેંદી અને શાહી પોટ્રેટમાં નિપુણતા ધરાવે છે. દરેક ક્ષણને અમે કલાત્મક દ્રષ્ટિ અને આધુનિક ટેકનોલોજીથી કેમેરામાં સાચવીએ છીએ.
+      </p>
+
+      <div>
+        <a href="#portfolio" class="inline-block px-10 py-4 bg-brand-gold text-black text-sm font-semibold rounded-full hover:bg-brand-goldLight transition shadow-lg shadow-brand-gold/20">
+          અમારું કામ જુઓ
+        </a>
+      </div>
+
+      <!-- Live Metric Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16 max-w-4xl mx-auto border-t border-white/10 mt-16">
+        <div class="text-center">
+          <p class="font-serif text-3xl sm:text-4xl text-brand-gold font-bold">૧,૪૦૦+</p>
+          <p class="text-xs text-brand-muted mt-1">વેડિંગ શૂટ પૂર્ણ</p>
+        </div>
+        <div class="text-center">
+          <p class="font-serif text-3xl sm:text-4xl text-brand-gold font-bold">૨૦+</p>
+          <p class="text-xs text-brand-muted mt-1">વર્ષનો બહોળો અનુભવ</p>
+        </div>
+        <div class="text-center">
+          <p class="font-serif text-3xl sm:text-4xl text-brand-gold font-bold">૪૮ કલાક</p>
+          <p class="text-xs text-brand-muted mt-1">ઝડપી ટીઝર ડિલિવરી</p>
+        </div>
+        <div class="text-center">
+          <p class="font-serif text-3xl sm:text-4xl text-brand-gold font-bold">૧૦૦%</p>
+          <p class="text-xs text-brand-muted mt-1">સંતુષ્ટ પરિવારો</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARTIST PHILOSOPHY / ABOUT ================= -->
+  <section id="about" class="py-24 bg-brand-card/50 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Imagery Composition -->
+        <div class="lg:col-span-6 relative">
+          <div class="relative z-10 aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=987&auto=format&fit=crop" 
+                 alt="અંકુર સ્ટુડિયો મુખ્ય ફોટોગ્રાફર" 
+                 class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition duration-700">
+          </div>
+          <div class="absolute -bottom-6 -right-6 z-20 bg-brand-surface p-6 rounded-xl border border-brand-gold/30 shadow-xl hidden sm:block max-w-xs">
+            <i data-lucide="award" class="text-brand-gold w-8 h-8 mb-2"></i>
+            <h4 class="text-base font-semibold text-white">પુરસ્કાર વિજેતા આર્ટિસ્ટ</h4>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">નેચરલ એક્સપ્રેશન અને કલાત્મક લાઇટિંગ માટે જાણીતા માસ્ટર ફોટોગ્રાફર.</p>
+          </div>
+        </div>
+
+        <!-- Narrative Content -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-block text-xs uppercase tracking-wider text-brand-gold font-semibold">અમારો દ્રષ્ટિકોણ</div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
+            અમે કૃત્રિમ પોઝ નથી કરાવતા, <br />
+            <span class="text-brand-gold font-serif italic">સાચી લાગણીઓને કેદ કરીએ છીએ.</span>
+          </h2>
+          <p class="text-brand-muted leading-relaxed font-normal">
+            અંકુર સ્ટુડિયોની શરૂઆત સાચા સ્નેહ અને સહજ હાસ્યને કેમેરામાં સાચવી લેવાના એક સપના સાથે થઈ હતી. અમારું માનવું છે કે દરેક લગ્ન અને દરેક સ્માઈલ એક અમૂલ્ય વારસો છે જે પેઢીઓ સુધી સચવાવી જોઈએ.
+          </p>
+          <p class="text-brand-muted leading-relaxed font-normal">
+            અત્યાધુનિક સિનેમા કેમેરા, પ્રાઇમ લેન્સ અને વ્યાવસાયિક કલર ગ્રેડિંગ સાથે અમે ભારતીય પરંપરાગત રીત-રિવાજોને આધુનિક સિનેમેટિક લુક આપીએ છીએ.
+          </p>
+
+          <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-gold shrink-0 mt-0.5"></i>
+              <p class="text-xs text-slate-300 font-medium">કલર-કેલિબ્રેટેડ હાઇ-એન્ડ એડિટિંગ અને બેકઅપ</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-gold shrink-0 mt-0.5"></i>
+              <p class="text-xs text-slate-300 font-medium">મલ્ટી-કેમેરા એક્સપર્ટ કેન્ડિડ ટીમ</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-gold shrink-0 mt-0.5"></i>
+              <p class="text-xs text-slate-300 font-medium">ઇટાલિયન લેધર પ્રીમિયમ ફોટો આલ્બમ્સ</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-gold shrink-0 mt-0.5"></i>
+              <p class="text-xs text-slate-300 font-medium">ડ્રોન સિનેમેટોગ્રાફી અને આઉટડોર શૂટિંગ</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 100% AUTHENTIC INDIAN PORTFOLIO GALLERY ================= -->
+  <section id="portfolio" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">અમારું કલેક્શન</span>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-2">પોર્ટફોલિયો ગેલેરી</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 text-xs font-medium bg-brand-card p-1.5 rounded-full border border-white/10" id="filter-container">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full bg-brand-gold text-black transition">બધા ફોટા</button>
+          <button data-filter="wedding" class="filter-btn px-4 py-2 rounded-full text-brand-muted hover:text-white transition">લગ્ન અને દુલ્હન</button>
+          <button data-filter="ceremony" class="filter-btn px-4 py-2 rounded-full text-brand-muted hover:text-white transition">મહેંદી અને હલ્દી</button>
+          <button data-filter="portrait" class="filter-btn px-4 py-2 rounded-full text-brand-muted hover:text-white transition">શાહી પોટ્રેટ</button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+        
+        <!-- 1. અસલ ભારતીય દુલ્હન (Indian Dulhan in Red Lehenga & Mathapatti) -->
+        <div class="portfolio-item group relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-card border border-white/5 cursor-pointer" data-category="wedding" onclick="openModal('http://localhost/ankur-studio/assets/bride.png?q=80&w=1287&auto=format&fit=crop', 'અસલ ભારતીય દુલ્હન', 'લાલ ચણિયાચોળી, માથાપટ્ટી, નથણી અને પરંપરાગત શણગાર')">
+          <img src="http://localhost/ankur-studio/assets/bride.png?q=80&w=1287&auto=format&fit=crop" 
+               alt="અસલ ભારતીય દુલ્હન" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs text-brand-gold font-semibold">દુલ્હન શૂટ</span>
+            <h4 class="text-xl font-bold text-white mt-1">અસલ ભારતીય દુલ્હન</h4>
+            <p class="text-xs text-brand-muted mt-0.5">લાલ ચણિયાચોળી, માથાપટ્ટી, નથણી અને પરંપરાગત શણગાર</p>
+          </div>
+        </div>
+
+        <!-- 2. મહેંદી વિધિ (Bridal Mehndi / Henna Hands with Bangles) -->
+        <div class="portfolio-item group relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-card border border-white/5 cursor-pointer" data-category="ceremony" onclick="openModal('http://localhost/ankur-studio/assets/mahendi.png?q=80&w=1287&auto=format&fit=crop', 'મહેંદી વિધિ અને ડિઝાઇન', 'દુલ્હનના હાથમાં બારીક મહેંદી અને કાચની બંગડીઓ')">
+          <img src="http://localhost/ankur-studio/assets/mahendi.png?q=80&w=1287&auto=format&fit=crop" 
+               alt="મહેંદી વિધિ" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs text-brand-gold font-semibold">મહેંદી રસમ</span>
+            <h4 class="text-xl font-bold text-white mt-1">મહેંદી વિધિ અને ડિઝાઇન</h4>
+            <p class="text-xs text-brand-muted mt-0.5">દુલ્હનના હાથમાં બારીક મહેંદી અને કાચની બંગડીઓ</p>
+          </div>
+        </div>
+
+        <!-- 3. ભારતીય વરરાજા (Groom in Royal Sherwani & Turban) -->
+        <div class="portfolio-item group relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-card border border-white/5 cursor-pointer" data-category="portrait" onclick="openModal('http://localhost/ankur-studio/assets/couple.png?q=80&w=1287&auto=format&fit=crop', 'ભારતીય વરરાજા રોયલ લુક', 'શાહી શેરવાની, મોતીની માળા અને પરંપરાગત સાફો')">
+          <img src="http://localhost/ankur-studio/assets/couple.png?q=80&w=1287&auto=format&fit=crop" 
+               alt="ભારતીય વરરાજા" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs text-brand-gold font-semibold">વરરાજા પોટ્રેટ</span>
+            <h4 class="text-xl font-bold text-white mt-1">ભારતીય વરરાજા રોયલ લુક</h4>
+            <p class="text-xs text-brand-muted mt-0.5">શાહી શેરવાની, મોતીની માળા અને પરંપરાગત સાફો</p>
+          </div>
+        </div>
+
+        <!-- 4. લગ્ન વિધિ મંડપ / વરમાળા (Indian Wedding Mandap & Couple Rituals) -->
+        <div class="portfolio-item group relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-card border border-white/5 cursor-pointer" data-category="wedding" onclick="openModal('http://localhost/ankur-studio/assets/mandap.png?q=80&w=1287&auto=format&fit=crop', 'લગ્ન વિધિ મંડપ અને વરમાળા', 'અગ્નિસાક્ષીએ ફેરા, ફૂલોની વર્ષા અને મંડપ રસમ')">
+          <img src="http://localhost/ankur-studio/assets/mandap.png?q=80&w=1287&auto=format&fit=crop" 
+               alt="લગ્ન વિધિ મંડપ" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs text-brand-gold font-semibold">લગ્ન વિધિ</span>
+            <h4 class="text-xl font-bold text-white mt-1">લગ્ન વિધિ મંડપ અને વરમાળા</h4>
+            <p class="text-xs text-brand-muted mt-0.5">અગ્નિસાક્ષીએ ફેરા, ફૂલોની વર્ષા અને મંડપ રસમ</p>
+          </div>
+        </div>
+
+        <!-- 5. હલ્દી સેરેમની (Haldi Ceremony with Marigold) -->
+        <div class="portfolio-item group relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-card border border-white/5 cursor-pointer" data-category="ceremony" onclick="openModal('http://localhost/ankur-studio/assets/haldi.png?q=80&w=1287&auto=format&fit=crop', 'હલ્દી ઉત્સવ અને સેરેમની', 'પીળા રંગો, ગલગોટાના ફૂલો અને હાસ્યસભર કેન્ડિડ ક્ષણો')">
+          <img src="http://localhost/ankur-studio/assets/haldi.png?q=80&w=1287&auto=format&fit=crop" 
+               alt="હલ્દી સેરેમની" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs text-brand-gold font-semibold">હલ્દી ઉત્સવ</span>
+            <h4 class="text-xl font-bold text-white mt-1">હલ્દી ઉત્સવ અને સેરેમની</h4>
+            <p class="text-xs text-brand-muted mt-0.5">પીળા રંગો, ગલગોટાના ફૂલો અને હાસ્યસભર કેન્ડિડ ક્ષણો</p>
+          </div>
+        </div>
+
+        <!-- 6. શાહી જ્વેલરી (Indian Bridal Gold & Kundan Jewellery) -->
+        <div class="portfolio-item group relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-card border border-white/5 cursor-pointer" data-category="portrait" onclick="openModal('http://localhost/ankur-studio/assets/gold.png?q=80&w=1287&auto=format&fit=crop', 'શાહી કુંદન અને સોનાની જ્વેલરી', 'બ્રાઇડલ નથણી, માથાપટ્ટી અને કુંદન હાર ક્લોઝઅપ')">
+          <img src="http://localhost/ankur-studio/assets/gold.png?q=80&w=1287&auto=format&fit=crop" 
+               alt="શાહી બ્રાઇડલ જ્વેલરી" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs text-brand-gold font-semibold">શાહી જ્વેલરી</span>
+            <h4 class="text-xl font-bold text-white mt-1">શાહી કુંદન અને સોનાની જ્વેલરી</h4>
+            <p class="text-xs text-brand-muted mt-0.5">બ્રાઇડલ નથણી, માથાપટ્ટી અને કુંદન હાર ક્લોઝઅપ</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES & EXPERTISE ================= -->
+  <section id="services" class="py-24 bg-brand-card/30 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">અમારી સેવાઓ</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">પ્રીમિયમ ફોટોગ્રાફી કવરેજ</h2>
+        <p class="text-brand-muted text-sm mt-3 font-normal">તમારા ખાસ પ્રસંગોને શ્રેષ્ઠ ગુણવત્તા સાથે કંડારવા માટે ખાસ સેવાઓ.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="p-8 rounded-2xl bg-brand-card border border-white/5 hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6">
+              <i data-lucide="heart" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">વેડિંગ અને પ્રી-વેડિંગ</h3>
+            <p class="text-sm text-brand-muted font-normal leading-relaxed mb-6">
+              સંપૂર્ણ લગ્ન વિધિ, રિસેપ્શન, સિનેમેટિક ટીઝર, કેન્ડિડ કવરેજ અને ડ્રોન શૂટ સાથે આજીવન યાદ રહી જાય તેવા આલ્બમ્સ.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2.5 border-t border-white/5 pt-6">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> 4K 60fps સિનેમેટિક ફિલ્મ</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> ૪૮ કલાકમાં પ્રિવ્યૂ ટીઝર</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> એક્સપર્ટ ડ્રોન પાઇલટ શૂટિંગ</li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="p-8 rounded-2xl bg-brand-surface border border-brand-gold/30 relative flex flex-col justify-between shadow-xl">
+          <div class="absolute -top-3 right-6 bg-brand-gold text-black text-[10px] font-bold tracking-wider px-3 py-1 rounded-full">
+            સૌથી લોકપ્રિય
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">મહેંદી, હલ્દી અને સંગીત</h3>
+            <p class="text-sm text-brand-muted font-normal leading-relaxed mb-6">
+              પરિવારની ખુશીઓ અને રીત-રિવાજોનું નેચરલ કવરેજ, જેમાં સહજ હાસ્ય અને ખુશનુમા ક્ષણો સચવાય છે.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2.5 border-t border-white/5 pt-6">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> લાઇવ મોમેન્ટ્સ કેન્ડિડ શૂટિંગ</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> વાઇબ્રન્ટ કલર ગ્રેડિંગ</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> હાઇ-સ્પીડ સ્લો-મોશન વિડીયો</li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="p-8 rounded-2xl bg-brand-card border border-white/5 hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6">
+              <i data-lucide="user" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">દુલ્હન અને રોયલ પોટ્રેટ</h3>
+            <p class="text-sm text-brand-muted font-normal leading-relaxed mb-6">
+              જ્વેલરી, ચણિયાચોળી અને શેરવાનીની તમામ વિગતો ઉપસી આવે તેવા ખાસ કમ્પોઝિશન સાથેનું શાહી પોટ્રેટ શૂટ.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2.5 border-t border-white/5 pt-6">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> સ્ટુડિયો પોર્ટેબલ લાઇટિંગ સેટઅપ</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> હાઇ-રિઝોલ્યુશન રિટચિંગ</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> પ્રીમિયમ ફોટોબુક પ્રિન્ટિંગ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLIENT REVIEWS ================= -->
+  <section id="testimonials" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">ગ્રાહકોના અનુભવ</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">ગ્રાહકોનો સંતોષ અને સ્નેહ</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-xl bg-brand-card border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="flex text-brand-gold gap-1 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              "અંકુર સ્ટુડિયોની ટીમે અમારા લગ્નની દરેક નાની ક્ષણને એટલી સુંદર રીતે કેદ કરી છે કે આજે પણ ફોટો જોતાં જ આંખો ભીની થઈ જાય છે. કામમાં એકદમ ઉત્સાહી અને નમ્ર ટીમ!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <h5 class="text-sm font-semibold text-white">પૂજા અને રોહન મહેતા</h5>
+            <p class="text-xs text-brand-muted">ઉદયપુર ડેસ્ટિનેશન વેડિંગ</p>
+          </div>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-card border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="flex text-brand-gold gap-1 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              "મહેંદી અને હલ્દીના ફોટામાં રંગો એટલા જીવંત આવ્યા છે કે આખો પરિવાર ખુશ થઈ ગયો. નેચરલ સ્માઈલ પકડવામાં અંકુરભાઈની કોઈ સરખામણી નથી."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <h5 class="text-sm font-semibold text-white">સિદ્ધાર્થ અને પ્રિયા</h5>
+            <p class="text-xs text-brand-muted">અમદાવાદ વેડિંગ ઉત્સવ</p>
+          </div>
+        </div>
+
+        <div class="p-8 rounded-xl bg-brand-card border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="flex text-brand-gold gap-1 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              "તેમણે બનાવી આપેલું ફોટો આલ્બમ માત્ર આલ્બમ નથી, એક લક્ઝરી પુસ્તક જેવું લાગે છે. પેપર અને પ્રિન્ટિંગની ક્વોલિટી અદ્ભુત છે. દિલથી આભાર!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <h5 class="text-sm font-semibold text-white">ડો. અનન્યા અને કુણાલ પટેલ</h5>
+            <p class="text-xs text-brand-muted">વડોદરા વેડિંગ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / સંપર્ક ================= -->
+  <section id="contact" class="py-24 bg-brand-card/60 border-t border-white/5 scroll-mt-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <!-- Left Column Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">વાતચીત શરૂ કરો</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">ચાલો સાથે મળીને<br/>તમારી ક્ષણોને કંડારીએ</h2>
+          <p class="text-brand-muted font-normal text-sm leading-relaxed">
+            વર્ષમાં મર્યાદિત શૂટ સ્વીકારીએ છીએ જેથી દરેક પ્રોજેક્ટને પૂરો સમય આપી શકીએ. નીચે સંપર્ક કરો:
+          </p>
+          <!-- Contact Info Div -->
+          <div id="contact-info" class="space-y-4 pt-4">
+            <a href="https://maps.google.com/?q=Ankur+Studio+Central+Boulevard+Vadodara+Gujarat" target="_blank" rel="noopener" class="flex items-center gap-4 text-slate-300 text-sm group hover:text-white transition">
+              <span class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center border border-white/5 text-brand-gold shrink-0 group-hover:border-brand-gold/50 transition">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+              </span>
+              <span>
+                <span class="block text-[11px] uppercase tracking-wider text-brand-muted">સરનામું / Address</span>
+                <span class="font-medium">અંકુર સ્ટુડિયો, સેન્ટ્રલ બુલેવાર્ડ, વડોદરા, ગુજરાત</span>
+              </span>
+            </a>
+            <a href="tel:+919925088814" class="flex items-center gap-4 text-slate-300 text-sm group hover:text-white transition">
+              <span class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center border border-white/5 text-brand-gold shrink-0 group-hover:border-brand-gold/50 transition">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </span>
+              <span>
+                <span class="block text-[11px] uppercase tracking-wider text-brand-muted">મોબાઈલ / Mobile</span>
+                <span class="font-medium">+91 99250 88814</span>
+              </span>
+            </a>
+            <a href="mailto:ankurstudio49@gmail.com" class="flex items-center gap-4 text-slate-300 text-sm group hover:text-white transition">
+              <span class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center border border-white/5 text-brand-gold shrink-0 group-hover:border-brand-gold/50 transition">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </span>
+              <span>
+                <span class="block text-[11px] uppercase tracking-wider text-brand-muted">ઈમેઈલ / Email</span>
+                <span class="font-medium break-all">ankurstudio49@gmail.com</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <!-- Right Column Form -->
+        <div class="lg:col-span-7 bg-brand-surface p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+          <form id="inquiry-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-brand-muted mb-2">તમારું નામ *</label>
+                <input type="text" required placeholder="નીરવ શાહ" class="w-full bg-brand-card border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-brand-muted mb-2">ઈમેઇલ *</label>
+                <input type="email" required placeholder="nirav@example.com" class="w-full bg-brand-card border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-brand-muted mb-2">ફોન / વોટ્સએપ *</label>
+                <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-brand-card border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-brand-muted mb-2">સેવા પસંદ કરો</label>
+                <select class="w-full bg-brand-card border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+                  <option>વેડિંગ અને પ્રી-વેડિંગ</option>
+                  <option>સ્ટુડિયો પોટ્રેટ / મોડલિંગ</option>
+                  <option>કમર્શિયલ / પ્રોડક્ટ શૂટ</option>
+                  <option>અન્ય ખાસ ઇવેન્ટ</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-brand-muted mb-2">તારીખ અને સ્થળ</label>
+              <input type="text" placeholder="25 ડિસેમ્બર 2026, વડોદરા" class="w-full bg-brand-card border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition" />
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-brand-muted mb-2">વધારાની વિગતો</label>
+              <textarea rows="4" placeholder="તમારા પ્રસંગ વિશે જણાવો..." class="w-full bg-brand-card border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition"></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="w-full py-4 bg-brand-gold hover:bg-brand-goldLight text-black font-semibold text-sm rounded-lg transition duration-300 flex items-center justify-center gap-2 shadow-lg shadow-brand-gold/15">
+              <span>સંદેશ મોકલો</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <div id="form-feedback" class="hidden text-center text-sm text-brand-gold font-medium"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-dark py-12 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full border border-brand-gold/60 flex items-center justify-center">
+          <i data-lucide="aperture" class="w-4 h-4 text-brand-gold"></i>
+        </div>
+        <span class="text-lg font-bold tracking-wider text-white">અંકુર સ્ટુડિયો</span>
+      </div>
+
+      <div class="text-center">
+        <p class="text-xs text-brand-muted">
+          &copy; <span id="year"></span> અંકુર સ્ટુડિયો ફોટોગ્રાફી. સર્વાધિકાર સુરક્ષિત.
+        </p>
+        <p class="text-[11px] text-brand-muted/80 mt-2 tracking-wide flex items-center justify-center gap-1.5">
+          Developed &amp; Designed by
+          <a href="" target="_blank" rel="noopener" class="jtb-badge" title="Designed & Developed by JTB Logic - jtblogic.in">
+            <i data-lucide="sparkles" class="w-3 h-3 text-brand-gold"></i>
+            <span class="jtb-eye">JTB Logic</span>
+          </a>
+        </p>
+      </div>
+
+      <div class="flex space-x-6 text-slate-400">
+        <a href="#" aria-label="Instagram" class="hover:text-brand-gold transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="Facebook" class="hover:text-brand-gold transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="YouTube" class="hover:text-brand-gold transition"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= WHATSAPP FLOATING BUTTON ================= -->
+  <!-- Dynamic image: works on localhost + any live domain / sub-folder.
+       Primary src is relative "assets/whatsapp.svg". JS below rewrites it to an
+       absolute URL built from document.baseURI, and onerror shows inline-SVG fallback. -->
+  <a id="whatsapp-float" href="https://wa.me/919925088814?text=%E0%AA%A8%E0%AA%AE%E0%AA%B8%E0%AB%8D%E0%AA%A4%E0%AB%87%20%E0%AA%85%E0%AA%82%E0%AA%95%E0%AB%81%E0%AA%B0%20%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AB%81%E0%AA%A1%E0%AA%BF%E0%AA%AF%E0%AB%8B%2C%20%E0%AA%AE%E0%AA%A8%E0%AB%87%20%E0%AA%AC%E0%AB%81%E0%AA%95%E0%AA%BF%E0%AA%82%E0%AA%97%20%E0%AA%AE%E0%AA%BE%E0%AA%9F%E0%AB%87%20%E0%AA%AE%E0%AA%BE%E0%AA%B9%E0%AA%BF%E0%AA%A4%E0%AB%80%20%E0%AA%86%E0%AA%AA%E0%AA%B6%E0%AB%8B"
+     target="_blank" rel="noopener" aria-label="WhatsApp પર સંપર્ક કરો"
+     class="fixed bottom-6 right-6 z-50 group flex items-center justify-center w-14 h-14 rounded-full shadow-2xl shadow-green-500/30 hover:scale-110 transition-transform duration-300">
+    <!-- Pulsing ring -->
+    <span class="wa-ring absolute inset-0 rounded-full bg-[#25D366]" aria-hidden="true"></span>
+    <!-- Green base -->
+    <span class="absolute inset-0 rounded-full bg-[#25D366] flex items-center justify-center overflow-hidden" aria-hidden="true">
+      <!-- Local dynamic image (change only the file, path stays dynamic) -->
+      <img id="wa-img" src="assets/whatsapp.svg" alt="" width="36" height="36" loading="lazy"
+           class="w-9 h-9 object-contain relative z-10"
+           onerror="this.style.display='none';var f=document.getElementById('wa-fallback');if(f){f.style.display='block';}" />
+      <!-- Inline SVG fallback (shows even if assets/whatsapp.svg missing on any domain) -->
+      <span id="wa-fallback" style="display:none;" class="relative z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="36" height="36" role="img" aria-label="WhatsApp">
+          <circle cx="32" cy="32" r="32" fill="#25D366"/>
+          <path fill="#FFFFFF" d="M32 8C18.7 8 8 18.7 8 32c0 4.2 1.1 8.3 3.2 11.9L8 56l12.4-3.3c3.5 1.9 7.4 2.9 11.6 2.9 13.3 0 24-10.7 24-24S45.3 8 32 8zm0 43.6c-3.6 0-7.1-1-10.1-2.8l-.7-.4-7.4 2 2-7.2-.5-.7c-2-3.2-3-6.8-3-10.5 0-11 8.9-19.9 20-19.9 5.3 0 10.3 2.1 14 5.8 3.8 3.8 6.1 8.8 6 14.1 0 11-9.2 19.6-20.3 19.6zm11-14.7c-.6-.3-3.5-1.7-4.1-1.9-.6-.2-1-.3-1.4.3-.4.6-1.5 1.9-1.9 2.3-.3.4-.7.5-1.3.2-3.5-1.8-5.8-3.1-8.1-7.1-.6-1.1.6-1 1.8-3.3.2-.4.1-.7-.1-1-.1-.3-1.3-3.2-1.8-4.4-.5-1.2-1-1-1.3-1-.4 0-.7 0-1.1 0-.4 0-1 .1-1.6.7-.6.6-2.1 2-2.1 5s2.1 5.8 2.4 6.2c.3.4 4.2 6.4 10.2 9 3.8 1.6 5.3 1.8 7.2 1.5 1.1-.2 3.5-1.4 4-2.8.5-1.4.5-2.6.3-2.8-.1-.3-.5-.5-1.1-.7z"/>
+        </svg>
+      </span>
+    </span>
+    <!-- Tooltip -->
+    <span class="wa-tooltip pointer-events-none opacity-0 translate-y-[-50%] translate-x-2 transition-all duration-300 absolute right-[70px] top-1/2 whitespace-nowrap bg-white text-black text-xs font-semibold px-3 py-2 rounded-lg shadow-xl">
+      WhatsApp પર સંપર્ક કરો
+    </span>
+  </a>
+
+  <!-- ================= INTERACTIVE LIGHTBOX MODAL ================= -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+    <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2" aria-label="બંધ કરો">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <div class="max-w-4xl w-full flex flex-col items-center">
+      <img id="lightbox-img" src="" alt="મોટો ફોટો" class="max-h-[75vh] w-auto rounded-lg shadow-2xl border border-white/10 object-contain">
+      <div class="text-center mt-4">
+        <h3 id="lightbox-title" class="text-2xl font-bold text-white"></h3>
+        <p id="lightbox-subtitle" class="text-xs text-brand-gold uppercase tracking-wider mt-1"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= LOGIC SCRIPT ================= -->
+  <script>
+    // Lucide Icons શરુ કરો
+    lucide.createIcons();
+
+    // ચાલુ વર્ષ
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // WhatsApp image: dynamic for localhost + any domain / sub-folder.
+    // Priority: 1) assets/whatsapp.png 2) assets/whatsapp.svg 3) inline SVG fallback.
+    // To use your own image: just drop whatsapp.png (or whatsapp.svg) in /assets folder.
+    (function () {
+      var waImg = document.getElementById('wa-img');
+      if (!waImg) return;
+      try {
+        var candidates = ['assets/whatsapp.png', 'assets/whatsapp.svg'];
+        var abs = candidates.map(function (p) { return new URL(p, document.baseURI).href; });
+        var i = 0;
+        waImg.src = abs[0];
+        waImg.addEventListener('error', function handler() {
+          i++;
+          if (i < abs.length) {
+            waImg.src = abs[i];
+          } else {
+            waImg.removeEventListener('error', handler);
+            waImg.style.display = 'none';
+            var f = document.getElementById('wa-fallback');
+            if (f) f.style.display = 'block';
+          }
+        });
+      } catch (e) { /* keep relative src + onerror fallback */ }
+    })();
+
+    // મોબાઈલ મેનુ ટોગલ
+    const mobileBtn = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // લિંક ક્લિક પર મેનુ બંધ થવું
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // ફોર્મ સબમિશન હેન્ડલિંગ
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const feedback = document.getElementById('form-feedback');
+      const original = btn.innerHTML;
+      btn.innerHTML = '<span class="animate-pulse">વિગતો મોકલાઈ રહી છે...</span>';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = original;
+        lucide.createIcons();
+        btn.disabled = false;
+        feedback.textContent = 'આભાર! તમારી વિગતો મળી છે. અમે જલ્દી સંપર્ક કરીશું.';
+        feedback.classList.remove('hidden');
+        document.getElementById('inquiry-form').reset();
+        setTimeout(() => feedback.classList.add('hidden'), 5000);
+      }, 1200);
+    }
+
+    // પોર્ટફોલિયો ફિલ્ટરિંગ લોજિક
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-brand-gold', 'text-black');
+          btn.classList.add('text-brand-muted');
+        });
+
+        button.classList.add('active', 'bg-brand-gold', 'text-black');
+        button.classList.remove('text-brand-muted');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // લાઇટબોક્સ મોડલ લોજિક
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-img');
+    const modalTitle = document.getElementById('lightbox-title');
+    const modalSubtitle = document.getElementById('lightbox-subtitle');
+
+    function openModal(imageSrc, title, subtitle) {
+      modalImg.src = imageSrc;
+      modalTitle.textContent = title;
+      modalSubtitle.textContent = subtitle;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Escape કી અથવા બહાર ક્લિક કરવાથી મોડલ બંધ
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+</body>
+</html>
